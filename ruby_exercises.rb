@@ -24,13 +24,57 @@
 
 # Generate an Array of Random Numbers in Ruby
 
-def random_numbers(num)
-  Array.new(num) { rand(1000) }
+# def random_numbers(num)
+#   Array.new(num) { rand(1000) }
+# end
+
+# puts random_numbers(2)
+
+
+# Mapping Array Data in Ruby Using Zip and Splat
+
+
+headers = [
+  '1B',
+  '2B',
+  '3B',
+  'SS',
+  'C',
+  'P',
+  'LF',
+  'CF',
+  'RF'
+]
+
+astros = [
+  'Gurriel',
+  'Altuve',
+  'Bregman',
+  'Correa',
+  'Gattis',
+  'Keuchel',
+  'Beltran',
+  'Springer',
+  'Reddick'
+]
+
+rangers = [
+  'Fielder',
+  'Andrus',
+  'Odor',
+  'Beltre',
+  'Lucroy',
+  'Darvish',
+  'Gomez',
+  'Choo',
+  'Mazara'
+]
+
+def position_filter(headers, *data)
+  p headers.zip(*data)
 end
 
-puts random_numbers(2)
-
-
+position_filter(headers, astros, rangers)
 
 
 
