@@ -34,55 +34,61 @@
 # Mapping Array Data in Ruby Using Zip and Splat
 
 
-headers = [
-  '1B',
-  '2B',
-  '3B',
-  'SS',
-  'C',
-  'P',
-  'LF',
-  'CF',
-  'RF'
-]
+# headers = [
+#   '1B',
+#   '2B',
+#   '3B',
+#   'SS',
+#   'C',
+#   'P',
+#   'LF',
+#   'CF',
+#   'RF'
+# ]
 
-astros = [
-  'Gurriel',
-  'Altuve',
-  'Bregman',
-  'Correa',
-  'Gattis',
-  'Keuchel',
-  'Beltran',
-  'Springer',
-  'Reddick'
-]
+# astros = [
+#   'Gurriel',
+#   'Altuve',
+#   'Bregman',
+#   'Correa',
+#   'Gattis',
+#   'Keuchel',
+#   'Beltran',
+#   'Springer',
+#   'Reddick'
+# ]
 
-rangers = [
-  'Fielder',
-  'Andrus',
-  'Odor',
-  'Beltre',
-  'Lucroy',
-  'Darvish',
-  'Gomez',
-  'Choo',
-  'Mazara'
-]
+# rangers = [
+#   'Fielder',
+#   'Andrus',
+#   'Odor',
+#   'Beltre',
+#   'Lucroy',
+#   'Darvish',
+#   'Gomez',
+#   'Choo',
+#   'Mazara'
+# ]
 
-def position_filter(headers, *data)
-  p headers.zip(*data)
+# def position_filter(headers, *data)
+#   p headers.zip(*data)
+# end
+
+# position_filter(headers, astros, rangers)
+
+
+
+
+# Coding Interview Question: Reversing the Words in a String in Ruby
+
+
+string ="dog lazy the over jumped fox brown quick The"
+
+def sentence_revers(string)
+  string.split.reverse.join(" ")
 end
 
-position_filter(headers, astros, rangers)
-
-
-
-
-
-
-
-
+p sentence_revers string
 
 
 
