@@ -82,13 +82,28 @@
 # Coding Interview Question: Reversing the Words in a String in Ruby
 
 
-string ="dog lazy the over jumped fox brown quick The"
+# string ="dog lazy the over jumped fox brown quick The"
 
-def sentence_revers(string)
-  string.split.reverse.join(" ")
+# # def sentence_revers(string)
+# #   string.split.reverse.join(" ")
+# # end
+
+# # p sentence_revers string
+
+# Creating a Palindrome Method in Ruby
+
+def palindrome? word
+  normal_order = word.downcase
+  reversed = word.reverse.downcase
+  puts normal_order == reversed ? "Palindrome!" : "👻"
 end
 
-p sentence_revers string
+palindrome?("Tacocat")
+
+
+
+
+
 
 
 
