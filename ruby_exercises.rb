@@ -92,13 +92,34 @@
 
 # Creating a Palindrome Method in Ruby
 
-def palindrome? word
-  normal_order = word.downcase
-  reversed = word.reverse.downcase
-  puts normal_order == reversed ? "Palindrome!" : "👻"
+# def palindrome? word
+#   normal_order = word.downcase
+#   reversed = word.reverse.downcase
+#   puts normal_order == reversed ? "Palindrome!" : "👻"
+# end
+
+# palindrome?("Tacocat")
+
+# Leap years in 20th century
+require 'date'
+
+years = (1900..1999).to_a
+
+def leap_years(array)
+  leap_years = []
+  array.select do |year|
+    current_year = Date.new(year)
+    leap_years << year if current_year.leap?
+  end
+  p leap_years
 end
 
-palindrome?("Tacocat")
+leap_years(years)
+
+
+
+
+
 
 
 
