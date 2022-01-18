@@ -101,20 +101,50 @@
 # palindrome?("Tacocat")
 
 # Leap years in 20th century
-require 'date'
+# require 'date'
 
-years = (1900..1999).to_a
+# years = (1900..1999).to_a
 
-def leap_years(array)
-  leap_years = []
-  array.select do |year|
-    current_year = Date.new(year)
-    leap_years << year if current_year.leap?
+# def leap_years(array)
+#   leap_years = []
+#   array.select do |year|
+#     current_year = Date.new(year)
+#     leap_years << year if current_year.leap?
+#   end
+#   p leap_years
+# end
+
+# leap_years(years)
+
+# Converting a Hash to a URL Friendly String in Ruby
+
+
+class Hash
+  def hash_to_url
+    self.map { |i| i * "=" } * "&"
   end
-  p leap_years
 end
 
-leap_years(years)
+hash_into_url = {
+  topic: "baseball",
+  team: "astros",
+  whatever: "okok"
+  }
+
+
+
+puts hash_into_url.hash_to_url
+
+
+
+
+
+
+
+
+
+
+
 
 
 
