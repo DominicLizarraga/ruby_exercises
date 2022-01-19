@@ -119,35 +119,47 @@
 # Converting a Hash to a URL Friendly String in Ruby
 
 
-class Hash
-  def hash_to_url
-    self.map { |i| i * "=" } * "&"
+# class Hash
+#   def hash_to_url
+#     self.map { |i| i * "=" } * "&"
+#   end
+# end
+
+# hash_into_url = {
+#   topic: "baseball",
+#   team: "astros",
+#   whatever: "okok"
+#   }
+
+
+
+# puts hash_into_url.hash_to_url
+
+
+# Build a Currency Converter in Ruby
+# ¥
+# $
+# €
+
+def currency_coverter(quantity, currency)
+
+  case currency
+  when "USD"
+    then "$%.2f" % quantity
+  when "JP"
+    then "¥%.0f" % quantity
+  when "EU"
+    then ("€%.2f" % quantity).gsub(".", ",")
   end
+
 end
 
-hash_into_url = {
-  topic: "baseball",
-  team: "astros",
-  whatever: "okok"
-  }
 
+puts currency_coverter(1000, "USD")
 
+puts currency_coverter(1000, "JP")
 
-puts hash_into_url.hash_to_url
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+puts currency_coverter(1000, "EU")
 
 
 
