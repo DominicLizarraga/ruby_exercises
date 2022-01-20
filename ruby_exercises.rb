@@ -141,25 +141,43 @@
 # $
 # €
 
-def currency_coverter(quantity, currency)
+# def currency_coverter(quantity, currency)
 
-  case currency
-  when "USD"
-    then "$%.2f" % quantity
-  when "JP"
-    then "¥%.0f" % quantity
-  when "EU"
-    then ("€%.2f" % quantity).gsub(".", ",")
-  end
+#   case currency
+#   when "USD"
+#     then "$%.2f" % quantity
+#   when "JP"
+#     then "¥%.0f" % quantity
+#   when "EU"
+#     then ("€%.2f" % quantity).gsub(".", ",")
+#   end
 
+# end
+
+
+# puts currency_coverter(1000, "USD")
+
+# puts currency_coverter(1000, "JP")
+
+# puts currency_coverter(1000, "EU")
+
+def title_creator title
+  heading = %w(h1 title_placeholder h1)
+  heading[1] = title
+  "<%s>%s</%s>" % heading
 end
 
+puts title_creator "hello, world!"
 
-puts currency_coverter(1000, "USD")
 
-puts currency_coverter(1000, "JP")
 
-puts currency_coverter(1000, "EU")
+
+
+
+
+
+
+
 
 
 
