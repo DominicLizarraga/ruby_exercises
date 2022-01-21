@@ -161,32 +161,36 @@
 
 # puts currency_coverter(1000, "EU")
 
-def title_creator title
-  heading = %w(h1 title_placeholder h1)
-  heading[1] = title
-  "<%s>%s</%s>" % heading
+# def title_creator title
+#   heading = %w(h1 title_placeholder h1)
+#   heading[1] = title
+#   "<%s>%s</%s>" % heading
+# end
+
+# puts title_creator "hello, world!"
+
+module Rubycontent
+  refine String do
+    def commentize
+      "# #{self}"
+    end
+  end
 end
 
-puts title_creator "hello, world!"
+class ContentController
+  using Rubycontent
 
+  def initialize(word)
+    @word = word
+  end
 
+  def hidden_content
+    @word.commentize
+  end
+end
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+cc = ContentController.new("This is a comment in RoR")
+puts cc.hidden_content
 
 
 
