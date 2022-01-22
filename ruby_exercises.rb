@@ -169,32 +169,38 @@
 
 # puts title_creator "hello, world!"
 
-module Rubycontent
-  refine String do
-    def commentize
-      "# #{self}"
-    end
-  end
+
+# Refinements to Adds Methods to Customized Classes
+# module Rubycontent
+#   refine String do
+#     def commentize
+#       "# #{self}"
+#     end
+#   end
+# end
+
+# class ContentController
+#   using Rubycontent
+
+#   def initialize(word)
+#     @word = word
+#   end
+
+#   def hidden_content
+#     @word.commentize
+#   end
+# end
+
+# cc = ContentController.new("This is a comment in RoR")
+# puts cc.hidden_content
+
+# Generate the Alphabet in Ruby
+
+def generate_alphabet
+  p ("a".."z").to_a
 end
 
-class ContentController
-  using Rubycontent
-
-  def initialize(word)
-    @word = word
-  end
-
-  def hidden_content
-    @word.commentize
-  end
-end
-
-cc = ContentController.new("This is a comment in RoR")
-puts cc.hidden_content
-
-
-
-
+generate_alphabet
 
 
 
