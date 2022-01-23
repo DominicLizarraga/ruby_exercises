@@ -238,15 +238,43 @@
 
 # Add the Next Letter or Number in a String Sequence in Ruby
 
-str = '1234'
+# str = '1234'
 
-def increment_value(str)
-  first_segment = str
-  last_segment = str.next[first_segment.length - 1]
-  return first_segment + last_segment
+# def increment_value(str)
+#   first_segment = str
+#   last_segment = str.next[first_segment.length - 1]
+#   return first_segment + last_segment
+# end
+
+# p increment_value(str)
+
+
+# Extract a Random Element from a Collection of Arrays Nested in a Hash in Ruby
+
+menu = {
+  'appetizer': ['Chips', 'Quesadillas', 'Flatbread'],
+  'entrees': ['Steak', 'Chicken', 'Lobster'],
+  'dessers': ['Cheescake', 'Cake', 'Cupcake']
+}
+
+def daily_special hash
+  array = []
+  hash.map do |menu_item|
+    array << menu_item.last
+  end
+  puts array.flatten.sample
 end
 
-p increment_value(str)
+daily_special menu
+
+
+
+
+
+
+
+
+
 
 
 
