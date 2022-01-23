@@ -196,11 +196,81 @@
 
 # Generate the Alphabet in Ruby
 
-def generate_alphabet
-  p ("a".."z").to_a
+# def generate_alphabet
+#   p ("a".."z").to_a
+# end
+
+# generate_alphabet
+
+
+# class Restaurant
+#   attr_reader :average_rating, :city
+
+#   def initialize(city, name)
+#     @city = city
+#     @name = name
+#     @number_of_ratings = 0
+#     @sum_of_ratings = 0
+#   end
+
+#   # TODO: implement .filter_by_city and #rate methods
+#   def self.filter_by_city(restaurants, city)
+#     restaurants.select do |restaurant|
+#       restaurant.city == city
+#     end
+#   end
+
+#   def rate(rating)
+#     @number_of_ratings += 1
+#     @sum_of_ratings += rating
+#     @average_rating =  @sum_of_ratings.to_f / @number_of_ratings
+#   end
+# end
+
+# jules_verne = Restaurant.new("paris", "Jules Verne")
+# bluebird = Restaurant.new("london", "Bluebird")
+# daniel = Restaurant.new("new york", "Daniel")
+# restaurants = [jules_verne, bluebird, daniel]
+# p Restaurant.filter_by_city(restaurants, "new york")
+
+
+
+
+# Add the Next Letter or Number in a String Sequence in Ruby
+
+str = '1234'
+
+def increment_value(str)
+  first_segment = str
+  last_segment = str.next[first_segment.length - 1]
+  return first_segment + last_segment
 end
 
-generate_alphabet
+p increment_value(str)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
