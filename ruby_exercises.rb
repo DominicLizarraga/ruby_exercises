@@ -251,21 +251,50 @@
 
 # Extract a Random Element from a Collection of Arrays Nested in a Hash in Ruby
 
-menu = {
-  'appetizer': ['Chips', 'Quesadillas', 'Flatbread'],
-  'entrees': ['Steak', 'Chicken', 'Lobster'],
-  'dessers': ['Cheescake', 'Cake', 'Cupcake']
-}
+# menu = {
+#   'appetizer': ['Chips', 'Quesadillas', 'Flatbread'],
+#   'entrees': ['Steak', 'Chicken', 'Lobster'],
+#   'dessers': ['Cheescake', 'Cake', 'Cupcake']
+# }
 
-def daily_special hash
-  array = []
-  hash.map do |menu_item|
-    array << menu_item.last
+# def daily_special hash
+#   array = []
+#   hash.map do |menu_item|
+#     array << menu_item.last
+#   end
+#   puts array.flatten.sample
+# end
+
+# daily_special menu
+
+
+# Coding Exercise: Word Counting and Reporting in Ruby
+
+
+str = "- the quick brown fox / jumped over the lazy fox"
+
+class String
+  def total_words
+    scan(/[\w]+/).count
   end
-  puts array.flatten.sample
+
+  def word_list
+    list = Hash.new(0)
+    downcase.scan(/[\w]+/) do |word|
+      list[word] += 1
+    end
+    list
+  end
 end
 
-daily_special menu
+p str.total_words
+p str.word_list
+
+
+
+
+
+
 
 
 
