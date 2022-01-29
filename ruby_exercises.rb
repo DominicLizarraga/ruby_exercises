@@ -271,30 +271,41 @@
 # Coding Exercise: Word Counting and Reporting in Ruby
 
 
-str = "- the quick brown fox / jumped over the lazy fox"
+# str = "- the quick brown fox / jumped over the lazy fox"
 
-class String
-  def total_words
-    scan(/[\w]+/).count
-  end
+# class String
+#   def total_words
+#     scan(/[\w]+/).count
+#   end
 
-  def word_list
-    list = Hash.new(0)
-    downcase.scan(/[\w]+/) do |word|
-      list[word] += 1
-    end
-    list
+#   def word_list
+#     list = Hash.new(0)
+#     downcase.scan(/[\w]+/) do |word|
+#       list[word] += 1
+#     end
+#     list
+#   end
+# end
+
+# p str.total_words
+# p str.word_list
+
+
+# Build a Dynamic Sum Method in Ruby
+
+# array = (1..10).to_a
+
+def sum_generator input
+  sum = 0
+  1.upto(input) do |num|
+    sum += num
   end
+  p sum
+  # 1.upto(input).inject(&:+)
 end
 
-p str.total_words
-p str.word_list
 
-
-
-
-
-
+sum_generator 10
 
 
 
