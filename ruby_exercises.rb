@@ -295,23 +295,33 @@
 
 # array = (1..10).to_a
 
-def sum_generator input
-  sum = 0
-  1.upto(input) do |num|
-    sum += num
+# def sum_generator input
+#   sum = 0
+#   1.upto(input) do |num|
+#     sum += num
+#   end
+#   p sum
+#   # 1.upto(input).inject(&:+)
+# end
+
+
+# sum_generator 10
+
+
+# Return Odd Elements from an Array in Ruby
+
+arr = Array(1..10)
+
+class Array
+  def odd_selector array
+    odds = []
+#     select(&:odd?) alternative way
+    array.select do |element|
+      new_arr << element if element.odd?
+    end
+    odds
   end
-  p sum
-  # 1.upto(input).inject(&:+)
 end
-
-
-sum_generator 10
-
-
-
-
-
-
 
 
 
