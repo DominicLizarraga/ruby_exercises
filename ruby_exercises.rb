@@ -310,25 +310,39 @@
 
 # Return Odd Elements from an Array in Ruby
 
-arr = Array(1..10)
+# arr = Array(1..10)
 
-class Array
-  def odd_selector array
-    odds = []
-#     select(&:odd?) alternative way
-    array.select do |element|
-      new_arr << element if element.odd?
-    end
-    odds
-  end
+# class Array
+#   def odd_selector array
+#     odds = []
+# #     select(&:odd?) alternative way
+#     array.select do |element|
+#       new_arr << element if element.odd?
+#     end
+#     odds
+#   end
+# end
+
+# Finding the Average Value in an Array in Ruby
+
+arr = [100, 50, 75]
+
+def average array
+  sum = array.reduce(:+)
+  size = array.size
+  return sum / size
 end
 
+p average arr
 
-
-
-
-
-
+class Array
+  def average
+    sum = self.reduce(:+)
+    size = self.size
+    return sum / size
+  end
+end
+p arr.average
 
 
 
