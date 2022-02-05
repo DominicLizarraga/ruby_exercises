@@ -325,33 +325,34 @@
 
 # Finding the Average Value in an Array in Ruby
 
-arr = [100, 50, 75]
+# arr = [100, 50, 75]
 
-def average array
-  sum = array.reduce(:+)
-  size = array.size
-  return sum / size
+# def average array
+#   sum = array.reduce(:+)
+#   size = array.size
+#   return sum / size
+# end
+
+# p average arr
+
+# class Array
+#   def average
+#     sum = self.reduce(:+)
+#     size = self.size
+#     return sum / size
+#   end
+# end
+# p arr.average
+
+# How to Rotate Elements in an Array in Ruby
+
+arr = [1, 2, 3]
+
+# expected [3, 2, 1]
+
+def array_ratotaion array, num
+  array.rotate(num)
 end
-
-p average arr
-
-class Array
-  def average
-    sum = self.reduce(:+)
-    size = self.size
-    return sum / size
-  end
-end
-p arr.average
-
-
-
-
-
-
-
-
-
 
 
 
