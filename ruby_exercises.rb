@@ -346,21 +346,21 @@
 
 # How to Rotate Elements in an Array in Ruby
 
-arr = [1, 2, 3]
+# arr = [1, 2, 3]
 
-# expected [3, 2, 1]
+# # expected [3, 2, 1]
 
-def array_ratotaion array, num
-  array.rotate(num)
+# def array_ratotaion array, num
+#   array.rotate(num)
+# end
+
+# Calculate the Number of Days Between Two Days in Ruby
+
+# Count days btw Christmas and July 1, 2004 (Ruby release)
+
+def day_counter
+  Integer(Date.new(2016, 12, 25) - Date.new(2004, 7, 1))
 end
-
-
-
-
-
-
-
-
 
 
 
