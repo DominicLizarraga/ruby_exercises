@@ -358,11 +358,25 @@
 
 # Count days btw Christmas and July 1, 2004 (Ruby release)
 
-def day_counter
-  Integer(Date.new(2016, 12, 25) - Date.new(2004, 7, 1))
+# def day_counter
+#   Integer(Date.new(2016, 12, 25) - Date.new(2004, 7, 1))
+# end
+
+# Coding Interview Question: Build a Dice Validator in Ruby
+
+  def valid_dice? d1, d2
+    [d1, d2].all_between?(1, 6) ? true : false
+  end
+
+
+class Array
+  def all_between? top, bottom
+    self.each do |e|
+      return false unless e.between? top, bottom
+    end
+    true
+  end
 end
-
-
 
 
 
