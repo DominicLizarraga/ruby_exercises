@@ -364,20 +364,41 @@
 
 # Coding Interview Question: Build a Dice Validator in Ruby
 
-  def valid_dice? d1, d2
-    [d1, d2].all_between?(1, 6) ? true : false
-  end
+#   def valid_dice? d1, d2
+#     [d1, d2].all_between?(1, 6) ? true : false
+#   end
 
 
-class Array
-  def all_between? top, bottom
-    self.each do |e|
-      return false unless e.between? top, bottom
+# class Array
+#   def all_between? top, bottom
+#     self.each do |e|
+#       return false unless e.between? top, bottom
+#     end
+#     true
+#   end
+# end
+
+# Build a Multiplication Table Generator in Ruby
+
+def mutiplication_table(num)
+  hash = Hash.new
+  products = []
+    1.upto(num) do |i|
+      (1..10).each do |e|
+        products.push(i * e)
+      end
+      hash[i] = products
+      products = []
     end
-    true
-  end
+  puts hash
 end
 
+# iterate over the first colecction (1.upto(num))
+# iterate over current elements (this case range)
+# add the multiplication to the empty array
+# add given iteration to the new hash
+# clear out the array
+# return final hash
 
-
+mutiplication_table 30
 
