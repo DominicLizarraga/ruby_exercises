@@ -380,25 +380,53 @@
 
 # Build a Multiplication Table Generator in Ruby
 
-def mutiplication_table(num)
-  hash = Hash.new
-  products = []
-    1.upto(num) do |i|
-      (1..10).each do |e|
-        products.push(i * e)
-      end
-      hash[i] = products
-      products = []
+# def mutiplication_table(num)
+#   hash = Hash.new
+#   products = []
+#     1.upto(num) do |i|
+#       (1..10).each do |e|
+#         products.push(i * e)
+#       end
+#       hash[i] = products
+#       products = []
+#     end
+#   puts hash
+# end
+
+# # iterate over the first colecction (1.upto(num))
+# # iterate over current elements (this case range)
+# # add the multiplication to the empty array
+# # add given iteration to the new hash
+# # clear out the array
+# # return final hash
+
+# mutiplication_table 30
+
+
+# Manually Removing Duplicates from an Array in Ruby
+
+class Array 
+  def remove_duplicate 
+    self.each_with_object([]) do |element, array|
+      array << element unless array.include?(element)
     end
-  puts hash
+  end
 end
 
-# iterate over the first colecction (1.upto(num))
-# iterate over current elements (this case range)
-# add the multiplication to the empty array
-# add given iteration to the new hash
-# clear out the array
-# return final hash
+p [1, 3, 3, 4, 2, 2].remove_duplicate
 
-mutiplication_table 30
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
