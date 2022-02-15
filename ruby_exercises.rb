@@ -405,18 +405,37 @@
 
 # Manually Removing Duplicates from an Array in Ruby
 
-class Array 
-  def remove_duplicate 
-    self.each_with_object([]) do |element, array|
-      array << element unless array.include?(element)
+# class Array 
+#   def remove_duplicate 
+#     self.each_with_object([]) do |element, array|
+#       array << element unless array.include?(element)
+#     end
+#   end
+# end
+
+# p [1, 3, 3, 4, 2, 2].remove_duplicate
+
+
+
+# Rebuild the include? Method in Ruby to Check for Array Values
+
+
+
+
+# iterate over array
+class Array
+  def does_it_have? item
+    each do |element|
+    # ask each element if it matches to the input
+      # puts element == item ? "true" : "false"
+      return true if element == item
     end
+    false
   end
 end
 
-p [1, 3, 3, 4, 2, 2].remove_duplicate
-
-
-
+arr = [1, 3, 50, 67]
+p arr.does_it_have? 12
 
 
 
