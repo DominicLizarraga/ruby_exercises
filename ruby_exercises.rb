@@ -423,22 +423,36 @@
 
 
 # iterate over array
-class Array
-  def does_it_have? item
-    each do |element|
-    # ask each element if it matches to the input
-      # puts element == item ? "true" : "false"
-      return true if element == item
+# class Array
+#   def does_it_have? item
+#     each do |element|
+#     # ask each element if it matches to the input
+#       # puts element == item ? "true" : "false"
+#       return true if element == item
+#     end
+#     false
+#   end
+# end
+
+# arr = [1, 3, 50, 67]
+# p arr.does_it_have? 12
+
+# Cloning the Cycle Method in Ruby to Repeatedly Go Through an Array
+
+# we need 2 different inputs, one for the array and the other for the times of oterations
+def clone_cycle(arr, num)
+  # find the way to use the second argument as limit
+  1.upto(num) do
+    # iterate through the array
+    arr.each do |i|
+      puts "#{i}"
     end
-    false
   end
 end
 
-arr = [1, 3, 50, 67]
-p arr.does_it_have? 12
-
-
-
+arr = %w(1 2 3)
+num = 2
+clone_cycle(arr, num)
 
 
 
