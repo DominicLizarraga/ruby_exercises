@@ -440,22 +440,31 @@
 # Cloning the Cycle Method in Ruby to Repeatedly Go Through an Array
 
 # we need 2 different inputs, one for the array and the other for the times of oterations
-def clone_cycle(arr, num)
-  # find the way to use the second argument as limit
-  1.upto(num) do
-    # iterate through the array
-    arr.each do |i|
-      puts "#{i}"
-    end
-  end
+# def clone_cycle(arr, num)
+#   # find the way to use the second argument as limit
+#   1.upto(num) do
+#     # iterate through the array
+#     arr.each do |i|
+#       puts "#{i}"
+#     end
+#   end
+# end
+
+# arr = %w(1 2 3)
+# num = 2
+# clone_cycle(arr, num)
+
+# Create a Range of Months Using the Ruby Date Library
+
+arr = (1..12).to_a
+months = []
+arr.each do |month|
+  date = Time.new(1, month)
+  
+  months << date.strftime('%B')
+
 end
-
-arr = %w(1 2 3)
-num = 2
-clone_cycle(arr, num)
-
-
-
+  puts months
 
 
 
