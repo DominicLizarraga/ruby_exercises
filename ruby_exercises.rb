@@ -456,19 +456,41 @@
 
 # Create a Range of Months Using the Ruby Date Library
 
-arr = (1..12).to_a
-months = []
-arr.each do |month|
-  date = Time.new(1, month)
+# arr = (1..12).to_a
+# months = []
+# arr.each do |month|
+#   date = Time.new(1, month)
   
-  months << date.strftime('%B')
+#   months << date.strftime('%B')
 
+# end
+#   puts months
+
+
+# Customizing the Ruby Sort Method to Force an Element to the End of the Sorted Array
+
+arr = ('a'..'z').to_a
+  
+def weird_alphabet arr, letter
+  index = arr.index {|x| x == letter}
+  arr.delete_at(index.to_i)
+  arr.push(letter)
+  puts arr
 end
-  puts months
 
+weird_alphabet arr, "k"
 
+def weird_alphabet
+  ('a'..'z').sort do |left, right|
+    if left == 'k'
+      1
+    else
+      left <=> right
+    end
+  end
+end
 
-
+p weird_alphabet
 
 
 
