@@ -494,21 +494,38 @@
 
 # Sort a Collection of Struct Objects by One of Their Attributes in Ruby
 
-Invoice = Struct.new(:name, :total, :category)
+# Invoice = Struct.new(:name, :total, :category)
 
-google = Invoice.new("Google", 100, "Marketing")
-amazon = Invoice.new("Amazon", 200, "eCommerce")
-yahoo = Invoice.new("Yahoo", 300, "Marketing")
+# google = Invoice.new("Google", 100, "Marketing")
+# amazon = Invoice.new("Amazon", 200, "eCommerce")
+# yahoo = Invoice.new("Yahoo", 300, "Marketing")
 
-invoices = [google, amazon, yahoo]
+# invoices = [google, amazon, yahoo]
 
-def total_sorter invoices
-  invoices.sort_by do |company| 
-    company.total
-  end.reverse
+# def total_sorter invoices
+#   invoices.sort_by do |company| 
+#     company.total
+#   end.reverse
+# end
+
+# puts total_sorter invoices
+
+
+# Building a Sort Method that Ignores Preceding Values
+
+
+states = ['- AK','NY', 'KY', '* CA', '-- VA', '* FL']
+
+def state_storter states
+  states.sort_by do |state|
+    state[-1, 2]
+    # state[-2. 2]
+  end
 end
 
-puts total_sorter invoices
+p states
+p states.sort
+p state_storter states
 
 
 
