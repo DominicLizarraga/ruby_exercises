@@ -469,28 +469,53 @@
 
 # Customizing the Ruby Sort Method to Force an Element to the End of the Sorted Array
 
-arr = ('a'..'z').to_a
+# arr = ('a'..'z').to_a
   
-def weird_alphabet arr, letter
-  index = arr.index {|x| x == letter}
-  arr.delete_at(index.to_i)
-  arr.push(letter)
-  puts arr
+# def weird_alphabet arr, letter
+#   index = arr.index {|x| x == letter}
+#   arr.delete_at(index.to_i)
+#   arr.push(letter)
+#   puts arr
+# end
+
+# weird_alphabet arr, "k"
+
+# def weird_alphabet
+#   ('a'..'z').sort do |left, right|
+#     if left == 'k'
+#       1
+#     else
+#       left <=> right
+#     end
+#   end
+# end
+
+# p weird_alphabet
+
+# Sort a Collection of Struct Objects by One of Their Attributes in Ruby
+
+Invoice = Struct.new(:name, :total, :category)
+
+google = Invoice.new("Google", 100, "Marketing")
+amazon = Invoice.new("Amazon", 200, "eCommerce")
+yahoo = Invoice.new("Yahoo", 300, "Marketing")
+
+invoices = [google, amazon, yahoo]
+
+def total_sorter invoices
+  invoices.sort_by do |company| 
+    company.total
+  end.reverse
 end
 
-weird_alphabet arr, "k"
+puts total_sorter invoices
 
-def weird_alphabet
-  ('a'..'z').sort do |left, right|
-    if left == 'k'
-      1
-    else
-      left <=> right
-    end
-  end
-end
 
-p weird_alphabet
+
+
+
+
+
 
 
 
