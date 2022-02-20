@@ -514,22 +514,50 @@
 # Building a Sort Method that Ignores Preceding Values
 
 
-states = ['- AK','NY', 'KY', '* CA', '-- VA', '* FL']
+# states = ['- AK','NY', 'KY', '* CA', '-- VA', '* FL']
 
-def state_storter states
-  states.sort_by do |state|
-    state[-1, 2]
-    # state[-2. 2]
+# def state_storter states
+#   states.sort_by do |state|
+#     state[-1, 2]
+#     # state[-2. 2]
+#   end
+# end
+
+# p states
+# p states.sort
+# p state_storter states
+
+
+# Build a Histogram of Integer Counts in Ruby
+
+arr = [1, 3, 3, 5, 12, 1, 1, 7, 8, 40, 1, 1]
+
+def num_counter arr
+  # need an empty hash
+  hash = Hash.new
+  # iterate over the collection
+  arr.each do |element|
+  # look up the element, if it's there add 1 if not create a new key
+    if hash.key? element
+      hash[element] += 1
+    else
+      hash[element] = 1
+    end
   end
+    # print the hash
+    p hash
 end
 
-p states
-p states.sort
-p state_storter states
+num_counter arr
 
+# other solution with inject
 
-
-
+def num_counter arr
+  arr.inject(Hash.new(0)) do |hash, element|
+    hash[element] += 1
+    hash
+  end
+end
 
 
 
