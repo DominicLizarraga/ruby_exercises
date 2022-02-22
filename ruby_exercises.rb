@@ -530,37 +530,45 @@
 
 # Build a Histogram of Integer Counts in Ruby
 
-arr = [1, 3, 3, 5, 12, 1, 1, 7, 8, 40, 1, 1]
+# arr = [1, 3, 3, 5, 12, 1, 1, 7, 8, 40, 1, 1]
 
-def num_counter arr
-  # need an empty hash
-  hash = Hash.new
-  # iterate over the collection
-  arr.each do |element|
-  # look up the element, if it's there add 1 if not create a new key
-    if hash.key? element
-      hash[element] += 1
-    else
-      hash[element] = 1
-    end
-  end
-    # print the hash
-    p hash
-end
+# def num_counter arr
+#   # need an empty hash
+#   hash = Hash.new
+#   # iterate over the collection
+#   arr.each do |element|
+#   # look up the element, if it's there add 1 if not create a new key
+#     if hash.key? element
+#       hash[element] += 1
+#     else
+#       hash[element] = 1
+#     end
+#   end
+#     # print the hash
+#     p hash
+# end
 
-num_counter arr
+# num_counter arr
 
 # other solution with inject
 
-def num_counter arr
-  arr.inject(Hash.new(0)) do |hash, element|
-    hash[element] += 1
-    hash
-  end
+# def num_counter arr
+#   arr.inject(Hash.new(0)) do |hash, element|
+#     hash[element] += 1
+#     hash
+#   end
+# end
+
+
+# Remove Vowels from an Array in Ruby
+
+arr = ('a'..'z').to_a
+
+
+def vowel_remover arr
+  puts arr.grep(/[^aeiou]/)
 end
 
-
-
-
+vowel_remover arr
 
 
