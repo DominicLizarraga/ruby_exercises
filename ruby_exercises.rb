@@ -562,13 +562,31 @@
 
 # Remove Vowels from an Array in Ruby
 
-arr = ('a'..'z').to_a
+# arr = ('a'..'z').to_a
 
 
-def vowel_remover arr
-  puts arr.grep(/[^aeiou]/)
+# def vowel_remover arr
+#   puts arr.grep(/[^aeiou]/)
+# end
+
+# vowel_remover arr
+
+
+# Generating a Sum of Prime Numbers in Ruby
+
+def prime_sum num
+  Prime.each(num).inject(0, :+)
 end
+  
+  
+prime_sum 22
 
-vowel_remover arr
+
+
+
+
+
+
+
 
 
