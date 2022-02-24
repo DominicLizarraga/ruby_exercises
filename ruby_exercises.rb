@@ -574,15 +574,23 @@
 
 # Generating a Sum of Prime Numbers in Ruby
 
-def prime_sum num
-  Prime.each(num).inject(0, :+)
+# def prime_sum num
+#   Prime.each(num).inject(0, :+)
+# end
+  
+  
+# prime_sum 22
+
+build a breadcrumbing with ruby 
+
+collection = ['String 1', 'String 2', 'String 3']
+
+def breadcumbting_generator collection
+  puts collection.join(' / ')
+  
 end
-  
-  
-prime_sum 22
 
-
-
+breadcumbting_generator collection
 
 
 
