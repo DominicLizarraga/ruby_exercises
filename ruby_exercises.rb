@@ -581,16 +581,46 @@
   
 # prime_sum 22
 
-build a breadcrumbing with ruby 
+# build a breadcrumbing with ruby 
 
-collection = ['String 1', 'String 2', 'String 3']
+# collection = ['String 1', 'String 2', 'String 3']
 
-def breadcumbting_generator collection
-  puts collection.join(' / ')
+# def breadcumbting_generator collection
+#   puts collection.join(' / ')
+  
+# end
+
+# breadcumbting_generator collection
+
+
+# order hash based on length
+
+hash = {
+  'something': 'Anything',
+  "another_key" => 'Anything',
+  8383=> 'Anything'
+}
+
+def order_hash hash
+  # grab all keys
+  # convert to string
+  # sort the by
+  hash.keys.map(&:to_s).sort_by do |key|
+    key.length
+  end
+  
   
 end
 
-breadcumbting_generator collection
+
+puts order_hash hash
+
+
+
+
+
+
+
 
 
 
