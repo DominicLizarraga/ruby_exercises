@@ -618,15 +618,21 @@
 
 # Fibonacci Sequence Generator in Ruby
 
+# def fibonacci num
+#   (1..num).inject([0, 1]) { |fib_acumulator| fib_acumulator << fib_acumulator.last(2).inject(:+) }
+# end
+
+# p fibonacci 10
+
+# Find the last nth form the Fibonacci series
+
 def fibonacci num
-  (1..num).inject([0, 1]) { |fib_acumulator| fib_acumulator << fib_acumulator.last(2).inject(:+) }
+  fib = (1..num).inject([0, 1]) do |fib| 
+    fib << fib.last(2).inject(:+)
+  end.last
 end
 
 p fibonacci 10
-
-
-
-
 
 
 
