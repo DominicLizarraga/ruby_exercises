@@ -595,28 +595,34 @@
 
 # order hash based on length
 
-hash = {
-  'something': 'Anything',
-  "another_key" => 'Anything',
-  8383=> 'Anything'
-}
+# hash = {
+#   'something': 'Anything',
+#   "another_key" => 'Anything',
+#   8383=> 'Anything'
+# }
 
-def order_hash hash
-  # grab all keys
-  # convert to string
-  # sort the by
-  hash.keys.map(&:to_s).sort_by do |key|
-    key.length
-  end
+# def order_hash hash
+#   # grab all keys
+#   # convert to string
+#   # sort the by
+#   hash.keys.map(&:to_s).sort_by do |key|
+#     key.length
+#   end
   
   
+# end
+
+
+# puts order_hash hash
+
+
+# Fibonacci Sequence Generator in Ruby
+
+def fibonacci num
+  (1..num).inject([0, 1]) { |fib_acumulator| fib_acumulator << fib_acumulator.last(2).inject(:+) }
 end
 
-
-puts order_hash hash
-
-
-
+p fibonacci 10
 
 
 
