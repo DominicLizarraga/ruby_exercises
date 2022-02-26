@@ -626,16 +626,28 @@
 
 # Find the last nth form the Fibonacci series
 
-def fibonacci num
-  fib = (1..num).inject([0, 1]) do |fib| 
-    fib << fib.last(2).inject(:+)
-  end.last
+# def fibonacci num
+#   fib = (1..num).inject([0, 1]) do |fib| 
+#     fib << fib.last(2).inject(:+)
+#   end.last
+# end
+
+# p fibonacci 10
+
+# Markdown parser
+
+content = <<-EOF
+# Hey there
+Some content
+# Another heading
+More text
+EOF
+
+def markdown_heading_parser content
+  puts content.gsub(/^.*#.*/) { |heading| "<h1>#{heading[2..-1]}</h1>" }
 end
 
-p fibonacci 10
-
-
-
+puts markdown_heading_parser content
 
 
 
