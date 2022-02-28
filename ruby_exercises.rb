@@ -636,19 +636,33 @@
 
 # Markdown parser
 
-content = <<-EOF
-# Hey there
-Some content
-# Another heading
-More text
-EOF
+# content = <<-EOF
+# # Hey there
+# Some content
+# # Another heading
+# More text
+# EOF
 
-def markdown_heading_parser content
-  puts content.gsub(/^.*#.*/) { |heading| "<h1>#{heading[2..-1]}</h1>" }
+# def markdown_heading_parser content
+#   puts content.gsub(/^.*#.*/) { |heading| "<h1>#{heading[2..-1]}</h1>" }
+# end
+
+# puts markdown_heading_parser content
+
+# Find the Largest Words in an Array in Ruby
+
+
+arr = %w(a group of words that are variable length)
+
+def largest_word arr, num
+  # iterate over the collection
+  # sort them by length
+  # reverse the array
+  # limit the array to the input
+  # new = arr.sort_by { |element| element.length }.reverse[0..num - 1]
+  arr.max_by(num) { |str| str.length }
 end
 
-puts markdown_heading_parser content
-
-
+p largest_word arr, 2
 
 
