@@ -652,17 +652,30 @@
 # Find the Largest Words in an Array in Ruby
 
 
-arr = %w(a group of words that are variable length)
+# arr = %w(a group of words that are variable length)
 
-def largest_word arr, num
-  # iterate over the collection
-  # sort them by length
-  # reverse the array
-  # limit the array to the input
-  # new = arr.sort_by { |element| element.length }.reverse[0..num - 1]
-  arr.max_by(num) { |str| str.length }
+# def largest_word arr, num
+#   # iterate over the collection
+#   # sort them by length
+#   # reverse the array
+#   # limit the array to the input
+#   # new = arr.sort_by { |element| element.length }.reverse[0..num - 1]
+#   arr.max_by(num) { |str| str.length }
+# end
+
+# p largest_word arr, 2
+
+# find the common factor with Ruby
+
+arr = (1..500)
+
+def find_common_divisor arr, num1, num2
+  arr.detect do |num|
+    num % num1 == 0 && num % num2 == 0
+  end
 end
 
-p largest_word arr, 2
+
+p find_common_divisor arr, 12, 10
 
 
