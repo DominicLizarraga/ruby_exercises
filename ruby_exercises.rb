@@ -667,15 +667,27 @@
 
 # find the common factor with Ruby
 
+# arr = (1..500)
+
+# def find_common_divisor arr, num1, num2
+#   arr.detect do |num|
+#     num % num1 == 0 && num % num2 == 0
+#   end
+# end
+
+
+# p find_common_divisor arr, 12, 10
+
+# Find all potendial products
+
 arr = (1..500)
 
-def find_common_divisor arr, num1, num2
-  arr.detect do |num|
+def mod_cheker arr, num1, num2
+  arr.select do |num|
+    # also find_all works
     num % num1 == 0 && num % num2 == 0
   end
 end
 
 
-p find_common_divisor arr, 12, 10
-
-
+p mod_cheker arr, 12, 10
