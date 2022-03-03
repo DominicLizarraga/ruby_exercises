@@ -680,14 +680,35 @@
 
 # Find all potendial products
 
-arr = (1..500)
+# arr = (1..500)
 
-def mod_cheker arr, num1, num2
-  arr.select do |num|
-    # also find_all works
-    num % num1 == 0 && num % num2 == 0
+# def mod_cheker arr, num1, num2
+#   arr.select do |num|
+#     # also find_all works
+#     num % num1 == 0 && num % num2 == 0
+#   end
+# end
+
+
+# p mod_cheker arr, 12, 10
+
+# Build an Index-Based Array to Hash Converter in Ruby
+
+
+class Array
+  def index_hash
+    self.each_with_object({}) do |item, hash|
+      hash[self.index(item)] = item
+    end
   end
 end
 
+arr = %w(the quick brown fox)
+p arr.index_hash
 
-p mod_cheker arr, 12, 10
+
+
+
+
+
+
