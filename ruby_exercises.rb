@@ -695,16 +695,51 @@
 # Build an Index-Based Array to Hash Converter in Ruby
 
 
+# class Array
+#   def index_hash
+#     self.each_with_object({}) do |item, hash|
+#       hash[self.index(item)] = item
+#     end
+#   end
+# end
+
+# arr = %w(the quick brown fox)
+# p arr.index_hash
+
+
+
+# How to Check if a Value Exists in a Set of Nested Hashes in Ruby
+
+
+books = [
+    {
+      :title => 'Fountainhead',
+      :author => 'Ayn Rand'
+    },
+    {
+      :title => 'Deepwork',
+      :author => 'Cal Newport'
+    }
+  ]
+
 class Array
-  def index_hash
-    self.each_with_object({}) do |item, hash|
-      hash[self.index(item)] = item
+  def value_included? element
+    self.each do |i|
+      return true if i.has_value? element
     end
+    false
   end
 end
 
-arr = %w(the quick brown fox)
-p arr.index_hash
+p books.value_included? "Deepwork"
+
+
+
+
+
+
+
+
 
 
 
