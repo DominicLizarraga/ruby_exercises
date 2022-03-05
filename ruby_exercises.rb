@@ -722,22 +722,45 @@ books = [
     }
   ]
 
-class Array
-  def value_included? element
-    self.each do |i|
-      return true if i.has_value? element
+# class Array
+#   def value_included? element
+#     self.each do |i|
+#       return true if i.has_value? element
+#     end
+#     false
+#   end
+# end
+
+# p books.value_included? "Deepwork"
+
+
+
+# Using Blocks to Dynamically Format Content in Ruby
+
+
+players = ['Altuve', 'Correa', 'Bregman']
+
+def lineup_generator(players, &block)
+  # iterate over collection 
+    players.map.with_index(1) do |player, index|
+      yield(player, index)
     end
-    false
-  end
 end
 
-p books.value_included? "Deepwork"
+lineup = lineup_generator players do |player, i|
+    "#{i}. #{player}"
+end
+p lineup
 
+lineup = lineup_generator players do |player, i|
+    "<p>#{i}</p> <div>#{player}</div>"
+end
+p lineup
 
-
-
-
-
+lineup = lineup_generator players do |player, i|
+    "<li>#{player}</li>"
+end
+p lineup
 
 
 
