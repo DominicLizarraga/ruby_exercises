@@ -738,29 +738,63 @@ books = [
 # Using Blocks to Dynamically Format Content in Ruby
 
 
-players = ['Altuve', 'Correa', 'Bregman']
+# players = ['Altuve', 'Correa', 'Bregman']
 
-def lineup_generator(players, &block)
-  # iterate over collection 
-    players.map.with_index(1) do |player, index|
-      yield(player, index)
-    end
+# def lineup_generator(players, &block)
+#   # iterate over collection 
+#     players.map.with_index(1) do |player, index|
+#       yield(player, index)
+#     end
+# end
+
+# lineup = lineup_generator players do |player, i|
+#     "#{i}. #{player}"
+# end
+# p lineup
+
+# lineup = lineup_generator players do |player, i|
+#     "<p>#{i}</p> <div>#{player}</div>"
+# end
+# p lineup
+
+# lineup = lineup_generator players do |player, i|
+#     "<li>#{player}</li>"
+# end
+# p lineup
+
+
+# How to Replicate the Rails image_tag Method in Ruby
+
+
+image_tag = 'https://devcamp.com/some_pic.jpg'
+
+def image_tag url, options = {}
+  str = "<img src='#{url}'"
+  
+  options.map { |attr, value| str << " #{attr}='#{value}'" }
+  
+  str << ">"
 end
 
-lineup = lineup_generator players do |player, i|
-    "#{i}. #{player}"
-end
-p lineup
 
-lineup = lineup_generator players do |player, i|
-    "<p>#{i}</p> <div>#{player}</div>"
-end
-p lineup
+p image_tag(image_tag, width: 42)
 
-lineup = lineup_generator players do |player, i|
-    "<li>#{player}</li>"
-end
-p lineup
+p image_tag(image_tag, height: 142, width: '42px')
+
+p image_tag(image_tag, height: 142, width: 42, alt: "my image")
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
