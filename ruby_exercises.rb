@@ -711,16 +711,16 @@
 # How to Check if a Value Exists in a Set of Nested Hashes in Ruby
 
 
-books = [
-    {
-      :title => 'Fountainhead',
-      :author => 'Ayn Rand'
-    },
-    {
-      :title => 'Deepwork',
-      :author => 'Cal Newport'
-    }
-  ]
+# books = [
+#     {
+#       :title => 'Fountainhead',
+#       :author => 'Ayn Rand'
+#     },
+#     {
+#       :title => 'Deepwork',
+#       :author => 'Cal Newport'
+#     }
+#   ]
 
 # class Array
 #   def value_included? element
@@ -766,27 +766,46 @@ books = [
 # How to Replicate the Rails image_tag Method in Ruby
 
 
-image_tag = 'https://devcamp.com/some_pic.jpg'
+# image_tag = 'https://devcamp.com/some_pic.jpg'
 
-def image_tag url, options = {}
-  str = "<img src='#{url}'"
+# def image_tag url, options = {}
+#   str = "<img src='#{url}'"
   
-  options.map { |attr, value| str << " #{attr}='#{value}'" }
+#   options.map { |attr, value| str << " #{attr}='#{value}'" }
   
-  str << ">"
+#   str << ">"
+# end
+
+
+# p image_tag(image_tag, width: 42)
+
+# p image_tag(image_tag, height: 142, width: '42px')
+
+# p image_tag(image_tag, height: 142, width: 42, alt: "my image")
+
+
+# Split a Nested Array
+
+
+
+Invoice = Struct.new(:title, :total, :category)
+google = Invoice.new('Google', 500, 'SEM')
+facebook = Invoice.new('Facebook', 1000, 'Social')
+linkedin = Invoice.new('Linkedin', 200, 'Social')
+
+invoices = [google, facebook, linkedin]
+
+def invoice_filter invoices
+  greater_than_300, less_than_300 = invoices.map.partition { |i| i.total > 300 }
+  
+  greater_than_300.each { |company| puts "- #{company.title} total: #{company.total}" }
+  
+  less_than_300.each { |company| puts "- #{company.title} total: #{company.total}" }
+
 end
 
 
-p image_tag(image_tag, width: 42)
-
-p image_tag(image_tag, height: 142, width: '42px')
-
-p image_tag(image_tag, height: 142, width: 42, alt: "my image")
-
-
-
-
-
+invoice_filter invoices
 
 
 
