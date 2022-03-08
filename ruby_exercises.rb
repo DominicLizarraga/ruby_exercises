@@ -788,29 +788,36 @@
 
 
 
-Invoice = Struct.new(:title, :total, :category)
-google = Invoice.new('Google', 500, 'SEM')
-facebook = Invoice.new('Facebook', 1000, 'Social')
-linkedin = Invoice.new('Linkedin', 200, 'Social')
+# Invoice = Struct.new(:title, :total, :category)
+# google = Invoice.new('Google', 500, 'SEM')
+# facebook = Invoice.new('Facebook', 1000, 'Social')
+# linkedin = Invoice.new('Linkedin', 200, 'Social')
 
-invoices = [google, facebook, linkedin]
+# invoices = [google, facebook, linkedin]
 
-def invoice_filter invoices
-  greater_than_300, less_than_300 = invoices.map.partition { |i| i.total > 300 }
+# def invoice_filter invoices
+#   greater_than_300, less_than_300 = invoices.map.partition { |i| i.total > 300 }
   
-  greater_than_300.each { |company| puts "- #{company.title} total: #{company.total}" }
+#   greater_than_300.each { |company| puts "- #{company.title} total: #{company.total}" }
   
-  less_than_300.each { |company| puts "- #{company.title} total: #{company.total}" }
+#   less_than_300.each { |company| puts "- #{company.title} total: #{company.total}" }
 
+# end
+
+
+# invoice_filter invoices
+
+class Array
+  def duplicate_remover
+    self.each_with_object([]) do |e, arr|
+      arr << e unless arr.include?(e)
+    end
+  end
 end
 
+arr = [1, 2, 3, 1, 1]
 
-invoice_filter invoices
-
-
-
-
-
+arr.duplicate_remover
 
 
 
