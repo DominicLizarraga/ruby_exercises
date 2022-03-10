@@ -807,20 +807,29 @@
 
 # invoice_filter invoices
 
-class Array
-  def duplicate_remover
-    self.each_with_object([]) do |e, arr|
-      arr << e unless arr.include?(e)
-    end
-  end
+# class Array
+#   def duplicate_remover
+#     self.each_with_object([]) do |e, arr|
+#       arr << e unless arr.include?(e)
+#     end
+#   end
+# end
+
+# arr = [1, 2, 3, 1, 1]
+
+# arr.duplicate_remover
+
+# Filter an array by given condition
+
+arr = [100, 12, 3, 4, 11]
+
+
+def greater_than_10 arr
+  arr.count { |e| e > 10}
 end
 
-arr = [1, 2, 3, 1, 1]
-
-arr.duplicate_remover
-
-
-
+p greater_than_10 arr
+      
 
 
 
