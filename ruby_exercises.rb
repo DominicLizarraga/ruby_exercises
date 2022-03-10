@@ -831,9 +831,17 @@ end
 p greater_than_10 arr
       
 
+# capitalize each word in the next string
 
+class String
+  def toJadenCase
+    p self.split.map { |w| w.capitalize }.join(" ")
+    
+  end
+  
+end
 
-
+"hello hallo hola".toJadenCase
 
 
 
