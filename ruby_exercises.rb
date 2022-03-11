@@ -821,29 +821,47 @@
 
 # Filter an array by given condition
 
-arr = [100, 12, 3, 4, 11]
+# arr = [100, 12, 3, 4, 11]
 
 
-def greater_than_10 arr
-  arr.count { |e| e > 10}
-end
+# def greater_than_10 arr
+#   arr.count { |e| e > 10}
+# end
 
-p greater_than_10 arr
+# p greater_than_10 arr
       
 
-# capitalize each word in the next string
+# # capitalize each word in the next string
 
-class String
-  def toJadenCase
-    p self.split.map { |w| w.capitalize }.join(" ")
+# class String
+#   def toJadenCase
+#     p self.split.map { |w| w.capitalize }.join(" ")
     
-  end
+#   end
   
+# end
+
+# "hello hallo hola".toJadenCase
+
+# code wars
+
+a1 = "xyaabbbccccdefww"
+a2 = "xxxxyyyyabklmopq"
+# longest(a, b) -> "abcdefklmopqwxy"
+
+# a = "abcdefghijklmnopqrstuvwxyz"
+# longest(a, a) -> "abcdefghijklmnopqrstuvwxyz"
+
+
+def longest(a1, a2)
+  # join both strings
+  new_string = (a1 + a2)
+  # covert array to string and separate, then eliminate duplicate
+  clear_string = new_string.split("").uniq
+  # sort array and convert to string
+  clear_string.sort.join("")
 end
 
-"hello hallo hola".toJadenCase
-
-
-
+p longest(a1, a2)
 
 
