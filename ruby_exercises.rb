@@ -864,7 +864,22 @@
 
 # p longest(a1, a2)
 
-def is_triangle(a,b,c)
-   # your code
-  (a + b > c) && (b + c > a) && (a + c > b) ? true : false
+# def is_triangle(a,b,c)
+#    # your code
+#   (a + b > c) && (b + c > a) && (a + c > b) ? true : false
+# end
+
+
+# Implement Range Finder Method in Ruby
+
+
+arr = ["A sentence", "broken into several", "array elements"]
+
+def largest_word arr
+  # split the collection
+  p new = arr.flat_map { |element| element.split }
+  p new.max_by(&:length)
 end
+
+largest_word arr
+
