@@ -873,13 +873,33 @@
 # Implement Range Finder Method in Ruby
 
 
-arr = ["A sentence", "broken into several", "array elements"]
+# arr = ["A sentence", "broken into several", "array elements"]
 
-def largest_word arr
-  # split the collection
-  p new = arr.flat_map { |element| element.split }
-  p new.max_by(&:length)
+# def largest_word arr
+#   # split the collection
+#   p new = arr.flat_map { |element| element.split }
+#   p new.max_by(&:length)
+# end
+
+# largest_word arr
+
+
+
+# Validating the Length of Each Array Element
+
+
+arr = %w(words that have a size requirement)
+
+class Array
+  def at_least_four_characters
+    all? do |e|
+     e.length >= 4
+    end
+  end
 end
 
-largest_word arr
+p arr.at_least_four_characters
+
+
+
 
