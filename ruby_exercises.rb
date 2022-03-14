@@ -901,5 +901,11 @@ end
 p arr.at_least_four_characters
 
 
+arr = %w(words that have a size requirement)
 
+def at_leat_four arr
+  new = arr.map(&:to_s).count { |e| e.length > 4 }
+end
+
+p at_leat_four arr
 
