@@ -888,24 +888,49 @@
 # Validating the Length of Each Array Element
 
 
-arr = %w(words that have a size requirement)
+# arr = %w(words that have a size requirement)
+
+# class Array
+#   def at_least_four_characters
+#     all? do |e|
+#      e.length >= 4
+#     end
+#   end
+# end
+
+# p arr.at_least_four_characters
+
+
+# arr = %w(words that have a size requirement)
+
+# def at_leat_four arr
+#   new = arr.map(&:to_s).count { |e| e.length > 4 }
+# end
+
+# p at_leat_four arr
+
+
+# Implement Range Finder Method
 
 class Array
-  def at_least_four_characters
-    all? do |e|
-     e.length >= 4
-    end
+  def array_range_finder 
+    [self.min, self.max]
   end
 end
 
-p arr.at_least_four_characters
+arr = [23, 14, 1, 54, 100]
+
+p arr.array_range_finder 
 
 
-arr = %w(words that have a size requirement)
 
-def at_leat_four arr
-  new = arr.map(&:to_s).count { |e| e.length > 4 }
-end
 
-p at_leat_four arr
+
+
+
+
+
+
+
+
 
