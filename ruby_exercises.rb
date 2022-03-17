@@ -926,22 +926,28 @@
 # usage of permutation methood
 
 
-arr = %w(14 29 9)
-def lockpick arr, combinations: nill
-  return arr.permutation(3).to_a if combinations
-  arr.permutation(3).size
+# arr = %w(14 29 9)
+# def lockpick arr, combinations: nill
+#   return arr.permutation(3).to_a if combinations
+#   arr.permutation(3).size
+# end
+
+# p lockpick arr, combinations: true
+
+# values = %w(14 29 9 44 22 1)
+
+# p lockpick values, combinations: false
+
+
+# Duplicating Objects
+
+str = ['some word', 'some word', 'some word']
+
+def duplicate_objects str
+  str.map { |w| p w.to_sym.object_id }
 end
 
-p lockpick arr, combinations: true
-
-values = %w(14 29 9 44 22 1)
-
-p lockpick values, combinations: false
-
-
-
-
-
+p duplicate_objects str
 
 
 
