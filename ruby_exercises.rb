@@ -912,18 +912,31 @@
 
 # Implement Range Finder Method
 
-class Array
-  def array_range_finder 
-    [self.min, self.max]
-  end
+# class Array
+#   def array_range_finder 
+#     [self.min, self.max]
+#   end
+# end
+
+# arr = [23, 14, 1, 54, 100]
+
+# p arr.array_range_finder 
+
+
+# usage of permutation methood
+
+
+arr = %w(14 29 9)
+def lockpick arr, combinations: nill
+  return arr.permutation(3).to_a if combinations
+  arr.permutation(3).size
 end
 
-arr = [23, 14, 1, 54, 100]
+p lockpick arr, combinations: true
 
-p arr.array_range_finder 
+values = %w(14 29 9 44 22 1)
 
-
-
+p lockpick values, combinations: false
 
 
 
